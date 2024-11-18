@@ -1,0 +1,20 @@
+.cray-icon {
+  --cray-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--cray-icon-color);
+  font-size: inherit;
+  &.cray-icon--right {
+    margin-left: 6px;
+  }
+}
+
+
+@each $val in primary,info,success,warning,danger {
+  .cray-icon--$(val) {
+    --cray-icon-color: var(--cray-color-$(val));
+  }
+}

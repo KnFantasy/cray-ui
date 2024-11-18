@@ -1,0 +1,81 @@
+.cray-tooltip {
+  --cray-popover-bg-color: var(--cray-bg-color-overlay);
+  --cray-popover-font-size: var(--cray-font-size-base);
+  --cray-popover-border-color: var(--cray-border-color);
+  --cray-popover-padding: 12px;
+  --cray-popover-border-radius: 4px;
+  display: inline-block;
+}
+
+.cray-tooltip {
+  .cray-tooltip__popper {
+    background: var(--cray-popover-bg-color);
+    border-radius: var(--cray-popover-border-radius);
+    border: 1px solid var(--cray-popover-border-color);
+    padding: var(--cray-popover-padding);
+    color: var(--cray-text-color-regular);
+    line-height: 1.4;
+    text-align: justify;
+    font-size: var(--cray-popover-font-size);
+    box-shadow: var(--cray-box-shadow-light);
+    word-break: break-all;
+    box-sizing: border-box;
+    z-index: 1000;
+    #arrow,
+    #arrow::before {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      box-sizing: border-box;
+      background: var(--cray-popover-bg-color);
+    }
+    #arrow {
+      visibility: hidden;
+    }
+    #arrow::before {
+      visibility: visible;
+      content: "";
+      transform: rotate(45deg);
+    }
+    &[data-popper-placement^='top'] > #arrow {
+      bottom: -5px;
+    }
+    
+    &[data-popper-placement^='bottom'] > #arrow {
+      top: -5px;
+    }
+    
+    &[data-popper-placement^='left'] > #arrow {
+      right: -5px;
+    }
+    
+    &[data-popper-placement^='right'] > #arrow {
+      left: -5px;
+    }
+    &[data-popper-placement^="top"] > #arrow::before {
+      border-right: 1px solid var(--cray-popover-border-color);
+      border-bottom: 1px solid var(--cray-popover-border-color);
+    }
+    &[data-popper-placement^="bottom"] > #arrow::before {
+      border-left: 1px solid var(--cray-popover-border-color);
+      border-top: 1px solid var(--cray-popover-border-color);
+    }
+    &[data-popper-placement^="left"] > #arrow::before {
+      border-right: 1px solid var(--cray-popover-border-color);
+      border-top: 1px solid var(--cray-popover-border-color);
+    }
+    &[data-popper-placement^="right"] > #arrow::before {
+      border-left: 1px solid var(--cray-popover-border-color);
+      border-bottom: 1px solid var(--cray-popover-border-color);
+    }
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity var(--cray-transition-duration);
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}

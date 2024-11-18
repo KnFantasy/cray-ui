@@ -1,0 +1,44 @@
+:root {
+  --vp-c-brand-1: var(--cray-color-primary);
+  --vp-c-brand-2: var(--cray-color-primary-light-1);
+  --vp-c-brand-3: var(--cray-color-primary-light-2);
+  --vp-c-brand-dark: var(--cray-color-primary-dark-2);
+  /* --vp-c-brand-darker: #265F99; */
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #FB1B1D, #FE9004);
+
+  --component-preview-bg: var(--vp-code-block-bg);
+  --component-preview-soft: var(--vp-code-block-bg-light);
+
+  /* 表格 */
+  --vp-c-bg-soft: #fff;
+
+  --vp-layout-max-width: 1520px;
+
+  --vp-sidebar-bg-color: #fff
+}
+
+body {
+  color: var(--vp-c-text-1);
+}
+h1, h2, h3, h4, h5, h6, p {
+  color: var(--vp-c-text-1);
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: none!important;
+}
+
+.main .VPButton.medium.brand {
+  transition: all 0.3s ease-in-out;
+  background: -webkit-linear-gradient(120deg, #FB1B1D, #FE9004);
+}
+
+.main .VPButton.medium.brand:hover {
+  transform: scale(1.08)
+}

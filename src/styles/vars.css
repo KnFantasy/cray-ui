@@ -1,0 +1,86 @@
+:root {
+  /* colors */
+  --cray-color-white: #ffffff;
+  --cray-color-black: #000000;
+  --colors: (
+    primary: #1677ff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+
+  @each $val, $color in var(--colors) {
+    --cray-color-$(val): $(
+      color
+    );
+
+    @for $i from 1 to 9 {
+      --cray-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+    }
+    @for $i from 1 to 9 {
+      --cray-color-$(val)-dark-$(i): mix(#000, $(color), .$(i))
+    }
+  }
+
+--cray-bg-color: #ffffff;
+--cray-bg-color-page: #f2f3f5;
+--cray-bg-color-overlay: #ffffff;
+--cray-text-color-primary: #303133;
+--cray-text-color-regular: #606266;
+--cray-text-color-secondary: #909399;
+--cray-text-color-placeholder: #a8abb2;
+--cray-text-color-disabled: #c0c4cc;
+--cray-border-color: #dcdfe6;
+--cray-border-color-light: #e4e7ed;
+--cray-border-color-lighter: #ebeef5;
+--cray-border-color-extra-light: #f2f6fc;
+--cray-border-color-dark: #d4d7de;
+--cray-border-color-darker: #cdd0d6;
+--cray-fill-color: #f0f2f5;
+--cray-fill-color-light: #f5f7fa;
+--cray-fill-color-lighter: #fafafa;
+--cray-fill-color-extra-light: #fafcff;
+--cray-fill-color-dark: #ebedf0;
+--cray-fill-color-darker: #e6e8eb;
+--cray-fill-color-blank: #ffffff;
+
+/* border */
+--cray-border-width: 1px;
+--cray-border-style: solid;
+--cray-border-color-hover: var(--cray-text-color-disabled);
+--cray-border: var(--cray-border-width) var(--cray-border-style) var(--cray-border-color);
+--cray-border-radius-base: 4px;
+--cray-border-radius-small: 2px;
+--cray-border-radius-round: 20px;
+--cray-border-radius-circle: 100%;
+
+/*font*/
+--cray-font-size-extra-large: 20px;
+--cray-font-size-large: 18px;
+--cray-font-size-medium: 16px;
+--cray-font-size-base: 14px;
+--cray-font-size-small: 13px;
+--cray-font-size-extra-small: 12px;
+--cray-font-family: "Helvetica Neue",
+Helvetica,
+"PingFang SC",
+"Hiragino Sans GB",
+"Microsoft YaHei",
+"\5fae\8f6f\96c5\9ed1",
+Arial,
+sans-serif;
+--cray-font-weight-primary: 500;
+
+/*disabled*/
+--cray-disabled-bg-color: var(--cray-fill-color-light);
+--cray-disabled-text-color: var(--cray-text-color-placeholder);
+--cray-disabled-border-color: var(--cray-border-color-light);
+
+/*animation*/
+--cray-transition-duration: .3s;
+--cray-transition-duration-fast: .2s;
+
+/* icon */
+--cray-icon-wrapper-width: 15px;
+}

@@ -1,0 +1,59 @@
+.cray-collapse {
+  --cray-collapse-border-color: var(--cray-border-color-light);
+  --cray-collapse-header-height: 48px;
+  --cray-collapse-header-bg-color: var(--cray-fill-color-blank);
+  --cray-collapse-header-text-color: var(--cray-text-color-primary);
+  --cray-collapse-header-font-size: 13px;
+  --cray-collapse-content-bg-color: var(--cray-fill-color-blank);
+  --cray-collapse-content-font-size: 13px;
+  --cray-collapse-content-text-color: var(--cray-text-color-primary);
+  --cray-collapse-disabled-text-color: var(--cray-disabled-text-color);
+  --cray-collapse-disabled-border-color: var(--cray-border-color-lighter);
+  border-top: 1px solid var(--cray-collapse-border-color);
+  border-bottom: 1px solid var(--cray-collapse-border-color);
+}
+.cray-collapse-item:last-child {
+  margin-bottom: -1px;
+}
+.cray-collapse-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--cray-collapse-header-height);
+  line-height: var(--cray-collapse-header-height);
+  background-color: var(--cray-collapse-header-bg-color);
+  color: var(--cray-collapse-header-text-color);
+  cursor: pointer;
+  font-size: var(--cray-collapse-header-font-size);
+  font-weight: 500;
+  transition: border-bottom-color var(--cray-transition-duration);
+  outline: none;
+  border-bottom: 1px solid var(--cray-collapse-border-color);
+  &.is-disabled {
+    color: var(--cray-collapse-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+  }
+  &.is-active {
+    border-bottom-color: transparent;
+    .header-angle {
+      transform: rotate(90deg);
+    }
+  }
+  .header-angle {
+    transition: transform var(--cray-transition-duration);
+  }
+}
+.cray-collapse-item__content {
+  will-change: height;
+  background-color: var(--cray-collapse-content-bg-color);
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: var(--cray-collapse-content-font-size);
+  color: var(--cray-collapse-content-text-color);
+  border-bottom: 1px solid var(--cray-collapse-border-color);
+  padding-bottom: 25px;
+}
+.slide-enter-active, .slide-leave-active {
+  transition: height var(--cray-transition-duration);
+}
